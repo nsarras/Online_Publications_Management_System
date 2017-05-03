@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+    <ul class="entries">
+  {% for entry in entries %}
+    <li><h2>{{ entry.title }}</h2>{{ entry.text|center }}</li>
+  {% else %}
+    <li><em>Error</em></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
